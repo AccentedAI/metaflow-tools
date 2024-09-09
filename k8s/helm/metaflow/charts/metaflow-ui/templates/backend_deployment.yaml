@@ -57,10 +57,6 @@ spec:
               value: "1"
             - name: PATH_PREFIX
               value: "/api"
-            - name: MF_DATASTORE_ROOT
-              value: {{ .Values.uiBackend.metaflowDatastoreSysRootS3 | quote }}
-            - name: METAFLOW_DATASTORE_SYSROOT_S3
-              value: {{ .Values.uiBackend.metaflowDatastoreSysRootS3 | quote }}
             {{- if .Values.uiBackend.metaflowS3EndpointURL }}
             - name: METAFLOW_S3_ENDPOINT_URL
               value: {{ .Values.uiBackend.metaflowS3EndpointURL | quote }}
@@ -69,8 +65,6 @@ spec:
               value: "DEBUG"
             - name: METAFLOW_SERVICE_URL
               value: {{ .Values.uiBackend.metaflowServiceURL | quote }}
-            - name: METAFLOW_DEFAULT_DATASTORE
-              value: "s3"
             - name: METAFLOW_DEFAULT_METADATA
               value: "service"
             {{- include "metaflow-ui.metadatadbEnvVars" . | nindent 12 }}
