@@ -17,6 +17,9 @@ spec:
       {{- end }}
       labels:
         {{- include "metaflow-ui.selectorLabels" . | nindent 8 }}
+        {{- with .Values.uiBackend.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
