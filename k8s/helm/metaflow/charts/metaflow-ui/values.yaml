@@ -7,6 +7,8 @@ uiBackend:
 
   podAnnotations: {}
 
+  podLabels: {}
+
   env: []
     # Additional environment variables for metaflow-ui static deployment. Example config:
     # - name: METAFLOW_SERVICE
@@ -34,9 +36,9 @@ uiBackend:
 
   metaflowDatastoreSysRootS3: ""
     # The root S3 bucket prefix that will be used by metaflow
-  
+
   metaflowServiceURL: "http://localhost:8083/api/metadata"
-    # The metaflow metadata service URL 
+    # The metaflow metadata service URL
 
   metaflowS3EndpointURL: ""
     # This should be set only when using an S3 compatible object storage like minio
